@@ -1,9 +1,40 @@
 <template>
   <div class="flex flex-col gap-4">
+    <section>
+      <h1 class="text-5xl font-bold mt-20">👋 Hello, I am Jane!</h1>
+      <p class="text-base text-gray-900 p-2 italic">Software Dev to be</p>
+    </section>
     <section class="flex flex-col md:flex-row md:items-center">
       <div class="md:w-3/4">
-        <h1 class="text-5xl font-bold mt-20">👋 Hello, I am Jane!</h1>
-        <p class="text-base text-gray-900 p-2 italic">Software Dev to be</p>
+        <p>Hi there! 🌞</p>
+        <p>
+          I'm a 26-year-old with a penchant for exploring life's twists and
+          turns, embracing every experience with open arms.
+        </p>
+        <p>
+          Initially, I studied sociology and education, but a serendipitous
+          encounter led me to a new passion -
+          <span class="font-bold text-[#00cc66]">computer science</span>. It's
+          been an intriguing journey so far, from a bootcamp course to diving
+          into Computer Science studies, where I recently wrapped up my first
+          year and look forward to the next.
+        </p>
+        <p>
+          Currently, I'm working as a working student at a Software Dev Company,
+          gaining valuable insights and building my expertise in the tech world.
+        </p>
+        <p>
+          Home is in the picturesque city of Kiel, where I've found solace and
+          joy in various sports, especially
+          <span class="font-bold text-[#00cc66]">water sports</span>. Among
+          them, rowing holds a special place in my heart, and it's a delight to
+          share that joy with friends.
+        </p>
+        <p>
+          That's a brief glimpse into my life's tapestry. I hope you'll join me
+          as I continue exploring, learning, and making the most of this
+          beautiful journey we call life. Thanks for stopping by!
+        </p>
       </div>
 
       <div class="w-1/2 md:max-w-sm p-8 mx-auto">
@@ -11,60 +42,18 @@
       </div>
     </section>
     <section>
-      <div>
-        <h2 class="font-bold text-2xl">Hello world! 🌍</h2>
-        <p>
-          I'm a 26-year-old adventurer, constantly seeking new discoveries and
-          embracing life's surprises. My journey has been quite the
-          rollercoaster so far!
-        </p>
-        <p>
-          Initially, I embarked on a path of sociology and education, thinking
-          it was my true calling. Little did I know that
-          <span class="font-bold text-[#00cc66]">computer science</span> had
-          something hilarious in store for me! 😄
-        </p>
-        <p>
-          One fine day, I stumbled upon a
-          <span class="text-[#ff3366]">bootcamp course</span> that introduced me
-          to the captivating world of coding. It was love at first "code"! 💻
-        </p>
-        <p>
-          I dived headfirst into the realm of Computer Science, and now, I've
-          completed my first year, with an epic second year ahead! It's like
-          battling monsters in a video game, and I'm totally leveling up! 🎮
-        </p>
-        <p>
-          But that's not all! I'm currently working as a working student at a
-          cool
-          <span class="font-bold text-[#00cc66]">Software Dev Company</span>.
-          Learning and gaining experience daily! 💡
-        </p>
-        <p>
-          Life couldn't get any more exciting, as I'm living in the charming
-          city of Kiel. Surrounded by the serene beauty of water, I'm enjoying
-          all kinds of sports, especially
-          <span class="font-bold text-[#00cc66]">water sports</span>! 🏄‍♀️
-        </p>
-        <p>
-          And you know what? Rowing has become my ultimate passion! I can't
-          resist the thrill of rowing with my friends, sharing laughter and
-          stories while we glide across the shimmering water. 🚣‍♂️
-        </p>
-        <p>
-          So, that's me in a nutshell – an unstoppable force of curiosity,
-          passion, and laughter. I'm always ready for new challenges and
-          determined to make the world a better place, one line of code at a
-          time! 😁
-        </p>
-      </div>
-    </section>
-    <section>
       <h2 class="font-bold text-2xl">Latest blog posts!</h2>
+      <div class="grid md:grid-cols-3 py-8 gap-10">
+        <Post :posts="posts" />
+      </div>
     </section>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { data: posts } = await useAsyncData('latest-posts', () => {
+  return queryContent('blog').sort({ date: 1 }).limit(3).find();
+});
+</script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
