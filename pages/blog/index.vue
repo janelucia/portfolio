@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl my-8">Welcome to My Tech-Tales Blog!</h1>
+  <h1 class="text-3xl my-8">Welcome to my Tech-Tales Blog!</h1>
   <p>
     Hey there, tech enthusiasts and curious minds! 👋 Join me as we explore the
     captivating world of

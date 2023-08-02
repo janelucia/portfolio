@@ -16,13 +16,13 @@
         <div
           class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
         >
-          <div class="flex flex-shrink-0 items-center">
+          <!-- <div class="flex flex-shrink-0 items-center">
             <img
               class="h-8 w-auto"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
               alt="Your Company"
             />
-          </div>
+          </div> -->
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <a
@@ -66,23 +66,13 @@
 </template>
 
 <script setup>
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from '@headlessui/vue';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
 const route = useRoute();
 
 const navigation = [
   { name: 'Home', href: '/', current: route.name == 'index' },
   { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
-  { name: 'Projects', href: '/projects', current: route.name == 'projects' },
-  { name: 'Uses', href: '/uses', current: route.name == 'uses' },
 ];
 </script>
