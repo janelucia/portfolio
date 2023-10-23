@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxt/content'],
+  nitro: {
+    prerender: {
+      failOnError: false,
+    },
+  },
   content: {
     highlight: {
       theme: 'nord',
