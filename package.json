@@ -15,11 +15,11 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.9.0",
     "nuxt": "^3.8.1",
-    "nuxt-headlessui": "^1.1.4",
     "nuxt-icon": "^0.6.6"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
-    "@heroicons/vue": "^2.0.18"
+    "@heroicons/vue": "^2.0.18",
+    "daisyui": "^4.0.9"
   }
 }
