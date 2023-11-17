@@ -1,9 +1,8 @@
 <template>
   <footer>
     <section
-      class="mx-auto max-w-7xl px-2 sm:px-4 lg:py-6 text-gray-300 flex items-center"
+      class="mx-auto max-w-7xl px-2 sm:px-4 lg:py-6 text-gray-300 flex items-center justify-end"
     >
-      <p class="flex-1">&copy 2021 Jane Schönfeld. All rights reserved.</p>
       <div class="flex justify-center gap-4 mb-4 mt-2">
         <a v-for="link in links" :key="link.name" :href="link.href">
           <Icon :name="link.icon" size="1.5rem" class="text-gray-300" />

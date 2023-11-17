@@ -8,14 +8,16 @@
       >
         Hello I'm Jane <span class="blink">|</span>
       </h1>
-      <div class="text-xl">
+      <div class="text-xl text-secondary">
         <p>software dev in training</p>
         <p>rowing enthusiast</p>
       </div>
-      <Stat :number="portfolio.length" />
     </div>
     <img src="/images/jane-animation.gif" alt="" class="rounded-xl" />
+    <NavBar />
   </div>
+  <Stat :number="portfolio.length" class="p-4" />
+  <AboutSection />
 </template>
 
 <script setup>
