@@ -12,17 +12,15 @@
         <p>software dev in training</p>
         <p>rowing enthusiast</p>
       </div>
+      <Stat :number="portfolio.length" />
     </div>
-    <NuxtImg
-      sizes="30vw"
-      src="/images/jane-animation.gif"
-      alt=""
-      class="rounded-xl"
-    />
+    <img src="/images/jane-animation.gif" alt="" class="rounded-xl" />
   </div>
 </template>
 
 <script setup>
+const { data: portfolio } = useFetch('/api/github');
+
 const { data: posts } = await useAsyncData('latest-posts', () => {
   return queryContent('blog').sort({ date: 1 }).limit(3).find();
 });

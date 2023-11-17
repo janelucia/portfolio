@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/app.css'],
+  runtimeConfig: {
+    githubPat: '', // can be overridden by NUXT_GITHUB_PAT environment variable
+  },
   content: {
     highlight: {
       theme: 'nord',
