@@ -1,9 +1,7 @@
 <template>
-  <div class="flex flex-col justify-between min-h-screen">
+  <div data-theme="forest">
     <NavBar />
-    <main
-      class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 w-full grow items-start"
-    >
+    <main class="mx-auto max-w-screen-md h-screen">
       <slot />
     </main>
     <FooterBar />

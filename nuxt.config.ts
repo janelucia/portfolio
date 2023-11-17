@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['daisyui'],
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxt/content'],
   nitro: {
@@ -8,10 +7,7 @@ export default defineNuxtConfig({
       failOnError: false,
     },
   },
-  daisyui: {
-    themes: ['forest', 'autumn'],
-    darkTheme: 'forest',
-  },
+  css: ['~/assets/css/app.css'],
   content: {
     highlight: {
       theme: 'nord',
