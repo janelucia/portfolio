@@ -16,12 +16,22 @@
     <img src="/images/jane-animation.gif" alt="" class="rounded-xl" />
     <NavBar />
   </div>
-  <Stat :number="portfolio.length" class="p-4" />
+  {{ console.log(user) }}
+  <Stat
+    :public="user.public_repos"
+    :private="user.owned_private_repos"
+    :url="user.avatar_url"
+    :link="user.html_url"
+    class="p-4"
+    :github-member="new Date(user.created_at).toLocaleDateString()"
+  />
   <AboutSection />
 </template>
 
 <script setup>
-const { data: portfolio } = useFetch('/api/github');
+const { data: portfolio } = useFetch('/api/github/repos');
+
+const { data: user } = useFetch('/api/github/user');
 
 const { data: posts } = await useAsyncData('latest-posts', () => {
   return queryContent('blog').sort({ date: 1 }).limit(3).find();
