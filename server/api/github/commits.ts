@@ -54,11 +54,11 @@ export default defineEventHandler(async (event) => {
       html_url: latestCommit.committer.html_url,
     },
     repository: {
-      url: latestCommit.repository.html_url,
+      html_url: latestCommit.repository.html_url,
       name: latestCommit.repository.name,
       owner: {
         name: latestCommit.repository.owner.login,
-        url: latestCommit.repository.owner.html_url,
+        html_url: latestCommit.repository.owner.html_url,
       },
     },
   };
