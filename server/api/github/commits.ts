@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
     },
     repository: {
       url: latestCommit.repository.html_url,
-      repo: latestCommit.repository.name,
+      name: latestCommit.repository.name,
       owner: {
         name: latestCommit.repository.owner.login,
         url: latestCommit.repository.owner.html_url,
