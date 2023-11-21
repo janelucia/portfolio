@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 h-[80vh] justify-between">
     <div
       class="flex justify-between w-full relative flex-col-reverse md:flex-row md:items-end gap-8"
     >
@@ -28,25 +28,12 @@
       <div class="flex justify-center">
         <img src="/images/jane-animation.gif" alt="" class="rounded-xl" />
       </div>
-      <!-- <NavBar /> -->
     </div>
-    <Stat
-      :public="user.public_repos"
-      :url="user.avatar_url"
-      :link="user.html_url"
-      class="p-4"
-      :github-member="new Date(user.created_at).toLocaleDateString()"
-    />
-    <AboutSection />
-    <PortfolioSection :portfolio="portfolio" />
+    <NavBar />
   </div>
 </template>
 
 <script setup>
-const { data: portfolio } = useFetch('/api/github/repos');
-
-const { data: user } = useFetch('/api/github/user');
-
 const { data: latestCommit } = useFetch('/api/github/commits');
 
 const { data: posts } = await useAsyncData('latest-posts', () => {

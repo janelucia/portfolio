@@ -36,7 +36,9 @@
         <p>{{ committerName }}</p>
       </a>
       <p v-if="commitDate">{{ new Date(commitDate).toLocaleString() }}</p>
-      <p v-if="latestUpdate">{{ new Date(latestUpdate).toLocaleString() }}</p>
+      <p v-if="latestUpdate">
+        Updated: {{ new Date(latestUpdate).toLocaleString() }}
+      </p>
     </div>
     <slot />
   </div>

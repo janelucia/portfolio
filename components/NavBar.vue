@@ -1,25 +1,26 @@
 <template>
-  <ul class="flex flex-col">
-    <li v-for="nav in navigation" :key="nav">
-      <NuxtLink :to="nav.href" class="hover:text-primary text-xl">{{
-        nav.name
-      }}</NuxtLink>
-    </li>
-  </ul>
+  <div class="flex justify-between text-lg">
+    <NuxtLink v-for="nav in navigation" :to="nav.href" :key="nav">
+      <button
+        class="text-lg px-4 py-2 border border-solid border-primary rounded-md hover:bg-primary hover:text-neutral"
+        :class="nav.current ? 'bg-primary text-neutral' : 'text-primary'"
+      >
+        {{ nav.name }}
+      </button>
+    </NuxtLink>
+  </div>
 </template>
 
 <script setup>
 const route = useRoute();
 
-const navigation = [
+const navigation = computed(() => [
   { name: 'Home', href: '/', current: route.name === '/' },
-  { name: 'About', href: '#about', current: route.name === 'about' },
+  { name: 'About Me', href: '/about', current: route.name.includes('about') },
   {
     name: 'Portfolio',
-    href: '#portfolio',
-    current: route.name === 'portfolio',
+    href: '/portfolio',
+    current: route.name.includes('portfolio'),
   },
-  { name: 'Contact', href: '#contact', current: route.name === 'contact' },
-  { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
-];
+]);
 </script>
