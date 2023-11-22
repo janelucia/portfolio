@@ -1,6 +1,7 @@
 <template>
   <div data-theme="forest">
-    <main class="mx-auto max-w-screen-lg p-8">
+    <NavBar />
+    <main class="mx-auto max-w-screen-lg p-4 flex flex-col gap-8">
       <slot />
     </main>
     <FooterBar />

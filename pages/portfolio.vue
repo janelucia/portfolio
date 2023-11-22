@@ -16,7 +16,6 @@
       </Card>
     </div>
   </section>
-  <NavBar />
 </template>
 
 <script setup lang="ts">

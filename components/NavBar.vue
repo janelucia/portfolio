@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between text-lg">
+  <div class="flex justify-between text-lg p-4">
     <NuxtLink v-for="nav in navigation" :to="nav.href" :key="nav">
       <button
         class="text-lg px-4 py-2 border border-solid border-primary rounded-md hover:bg-primary hover:text-neutral"

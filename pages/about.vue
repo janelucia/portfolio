@@ -39,7 +39,6 @@
       </div>
     </div>
   </section>
-  <NavBar />
 </template>
 
 <script setup lang="ts"></script>
