@@ -1,5 +1,8 @@
 <template>
-  <div data-theme="forest" class="flex flex-col justify-between h-screen">
+  <div
+    data-theme="forest"
+    class="flex flex-col justify-between h-screen font-mono"
+  >
     <NavBar />
     <main class="flex flex-col max-w-screen-lg gap-8 p-4 mx-auto">
       <slot />
