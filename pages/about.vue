@@ -1,11 +1,11 @@
 <template>
-  <section class="py-8">
+  <section>
     <Hero
       hero-title="Learn more about me"
       image-href="/images/jane-animation2.gif"
       class="mb-8"
     >
-      <p class="text-xl leading-relaxed text-justify">
+      <p class="text-xl leading-relaxed md:text-justify">
         Hi there! My name is Jane Schönfeld, and I'm a passionate frontend
         developer based in Kiel, Germany. With a background in educational
         science and sociology, I bring a unique perspective to my work, focusing
