@@ -19,7 +19,7 @@
     </Hero>
     <div class="flex flex-col gap-4 md:flex-row">
       <div class="flex flex-col self-end w-full gap-2 md:w-1/2">
-        <h2 class="text-6xl text-secondary">About</h2>
+        <h2 class="text-6xl text-primary">About</h2>
         <div class="z-10 flex flex-col gap-4 p-4 text-xl rounded-md bg-neutral">
           <div>
             <p class="font-bold">Name</p>

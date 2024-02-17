@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="text-6xl text-secondary">Portfolio</h2>
+    <h2 class="text-6xl text-primary">Portfolio</h2>
     <div class="flex flex-wrap gap-4">
       <Card
         v-for="repo in (portfolio as unknown) as Portfolio"

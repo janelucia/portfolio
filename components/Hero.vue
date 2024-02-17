@@ -4,7 +4,7 @@
   >
     <div class="flex flex-col w-full gap-8">
       <h1
-        class="absolute top-0 left-0 w-full font-extrabold text-8xl text-secondary"
+        class="absolute top-0 left-0 w-full font-extrabold text-8xl text-primary"
       >
         {{ heroTitle }}<span class="blink">|</span>
       </h1>

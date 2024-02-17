@@ -4,8 +4,8 @@
   >
     <NuxtLink v-for="nav in navigation" :to="nav.href" :key="nav">
       <button
-        class="px-4 py-2 text-lg border border-solid rounded-md border-primary hover:bg-primary hover:text-neutral"
-        :class="nav.current ? 'bg-primary text-neutral' : 'text-primary'"
+        class="px-4 py-2 text-lg border border-solid rounded-md border-secondary hover:bg-secondary hover:text-neutral"
+        :class="nav.current ? 'bg-secondary text-neutral' : 'text-secondary'"
       >
         {{ nav.name }}
       </button>
