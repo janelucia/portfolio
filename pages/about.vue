@@ -93,8 +93,18 @@
         </div>
       </div>
       <div class="flex flex-col items-center w-full gap-4 md:w-1/2">
-        <img src="/images/jane-business.jpg" alt="" class="w-3/4 rounded-xl" />
-        <img src="/images/jane-rudern.jpg" alt="" class="w-3/4 rounded-xl" />
+        <NuxtPicture
+          format="avif, webp"
+          src="/images/jane-business.jpg"
+          class="flex justify-center w-full"
+          :img-attrs="{ class: 'rounded-xl' }"
+        />
+        <NuxtPicture
+          format="avif, webp"
+          src="/images/jane-rudern2.jpg"
+          class="flex justify-center w-full"
+          :img-attrs="{ class: 'rounded-xl' }"
+        />
       </div>
     </div>
   </section>
