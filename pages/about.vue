@@ -3,6 +3,7 @@
     <Hero
       hero-title="Learn more about me"
       image-href="/images/jane-animation2.gif"
+      image-alt="Girl at a frozen sea with the sun in the background. She is wearing a warm jacket and is smiling at the camera. It is a gif and the girl is twirling around."
       class="mb-8"
     >
       <p class="text-xl leading-relaxed md:text-justify">
@@ -97,11 +98,13 @@
           format="avif, webp"
           src="/images/jane-business.jpg"
           class="flex justify-center w-full"
+          alt="Girl in a black turtle neck, with brown hair and eyes, smiling at the camera. Arms crossed."
           :img-attrs="{ class: 'rounded-xl' }"
         />
         <NuxtPicture
           format="avif, webp"
           src="/images/jane-rudern2.jpg"
+          alt="A girl at a pier, with a rowing boat and other people in the background. She is wearing a magenta a purple shirt and black leggings. Head is bowed."
           class="flex justify-center w-full"
           :img-attrs="{ class: 'rounded-xl' }"
         />

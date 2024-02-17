@@ -1,5 +1,9 @@
 <template>
-  <Hero hero-title="Hello, I'm Jane" image-href="/images/jane-animation.gif">
+  <Hero
+    hero-title="Hello, I'm Jane"
+    image-href="/images/jane-animation.gif"
+    image-alt="A girl in a black shirt, smiling at the camera, leaning on a table. It is a gif where the girl looks away and then into the camera."
+  >
     <div class="text-xl text-secondary">
       <p>software dev in training</p>
       <p>rowing enthusiast</p>

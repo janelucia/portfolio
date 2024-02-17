@@ -11,7 +11,7 @@
       <slot />
     </div>
     <div class="flex justify-center w-full">
-      <img :src="imageHref" alt="" class="rounded-xl" />
+      <img :src="imageHref" :alt="imageAlt" class="rounded-xl" />
     </div>
   </div>
 </template>
@@ -20,6 +20,7 @@
 defineProps<{
   heroTitle: string;
   imageHref: string;
+  imageAlt: string;
 }>();
 </script>
 
