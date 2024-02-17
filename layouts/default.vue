@@ -1,7 +1,7 @@
 <template>
-  <div data-theme="forest">
+  <div data-theme="forest" class="flex flex-col justify-between h-screen">
     <NavBar />
-    <main class="mx-auto max-w-screen-lg p-4 flex flex-col gap-8">
+    <main class="flex flex-col max-w-screen-lg gap-8 p-4 mx-auto">
       <slot />
     </main>
     <FooterBar />

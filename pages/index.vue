@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex justify-between w-full relative flex-col-reverse md:flex-row md:items-end gap-8"
+    class="relative flex flex-col-reverse justify-between w-full gap-8 md:flex-row md:items-end"
   >
-    <div class="w-full flex flex-col gap-8">
+    <div class="flex flex-col w-full gap-8">
       <h1
-        class="text-8xl font-extrabold text-secondary absolute w-full top-0 left-0"
+        class="absolute top-0 left-0 w-full font-extrabold text-8xl text-secondary"
       >
-        Hello I'm Jane <span class="blink">|</span>
+        Hello, I'm Jane <span class="blink">|</span>
       </h1>
       <div class="text-xl text-secondary">
         <p>software dev in training</p>
@@ -31,10 +31,10 @@
 </template>
 
 <script setup>
-const { data: latestCommit } = useFetch('/api/github/commits');
+const { data: latestCommit } = useFetch("/api/github/commits");
 
-const { data: posts } = await useAsyncData('latest-posts', () => {
-  return queryContent('blog').sort({ date: 1 }).limit(3).find();
+const { data: posts } = await useAsyncData("latest-posts", () => {
+  return queryContent("blog").sort({ date: 1 }).limit(3).find();
 });
 </script>
 

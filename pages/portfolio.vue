@@ -3,7 +3,7 @@
     <h2 class="text-6xl text-secondary">Portfolio</h2>
     <div class="flex flex-wrap gap-4">
       <Card
-        v-for="repo in (portfolio as Portfolio)"
+        v-for="repo in (portfolio as unknown) as Portfolio"
         :key="repo.id"
         :avatar-url="repo.owner.avatar_url"
         :repository-name="repo.name"
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-const { data: portfolio } = useFetch('/api/github/repos');
+const { data: portfolio } = useFetch("/api/github/repos");
 
 type Repo = {
   id: number;
