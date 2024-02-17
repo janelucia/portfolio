@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-wrap justify-center max-w-screen-lg gap-4 p-4 mx-auto text-lg sm:justify-between"
+    class="flex flex-wrap justify-center max-w-screen-lg gap-4 m-4 mx-auto text-lg sm:justify-between"
   >
     <NuxtLink v-for="nav in navigation" :to="nav.href" :key="nav">
       <button

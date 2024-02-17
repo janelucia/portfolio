@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8">
+  <section>
     <h2 class="text-6xl text-secondary">Portfolio</h2>
     <div class="flex flex-wrap gap-4">
       <Card
