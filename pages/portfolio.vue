@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col w-full gap-4 px-4 md:flex-row">
+  <section class="flex flex-col w-full gap-8 px-4 md:flex-row">
     <div class="flex flex-col gap-8 lg:w-3/4">
       <h2 class="text-6xl text-primary">Portfolio</h2>
       <div v-for="(repo, index) in (portfolio as Repo[])">
