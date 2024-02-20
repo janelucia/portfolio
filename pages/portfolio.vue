@@ -1,37 +1,42 @@
 <template>
-  <section>
-    <h2 class="text-6xl text-primary">Portfolio</h2>
-    <div class="flex flex-wrap gap-4">
-      <Card
-        v-for="repo in (portfolio as unknown) as Portfolio"
-        :key="repo.id"
-        :avatar-url="repo.owner.avatar_url"
-        :repository-name="repo.name"
-        :owner-name="repo.owner.login"
-        :latest-update="repo.updated_at"
-        :repository-url="repo.html_url"
-        :owner-url="repo.owner.html_url"
-        class="w-full"
-      >
-      </Card>
+  <section class="flex flex-col w-full gap-4 px-4 md:flex-row">
+    <div class="flex flex-col gap-8 lg:w-3/4">
+      <h2 class="text-6xl text-primary">Portfolio</h2>
+      <div v-for="(repo, index) in (portfolio as Repo[])">
+        <div
+          v-for="item in listPortfolio.filter(
+            (portfolioItem) => portfolioItem.name === repo.name
+          )"
+        >
+          <Feature :item="item" :repo="repo" :reverse="index % 2 !== 0" />
+        </div>
+      </div>
+    </div>
+    <div class="lg:w-1/4">
+      <h2 class="text-4xl text-primary">Timeline</h2>
+      <div class="flex flex-col gap-4">
+        <Card
+          v-for="commit in (commits?.items as Commit[])"
+          :key="commit.sha"
+          :avatar-url="commit.committer.avatar_url"
+          :repository-name="commit.repository.name"
+          :owner-name="commit.committer.login"
+          :latest-update="commit.commit.committer.date"
+          :repository-url="commit.repository.html_url"
+          :owner-url="commit.committer.html_url"
+          :commit-message="commit.commit.message"
+          class="w-full"
+        >
+        </Card>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { listPortfolio } from "~/helpers/listPortfolio";
+import type { Repo, Commit } from "~/helpers/types";
+
 const { data: portfolio } = useFetch("/api/github/repos");
-
-type Repo = {
-  id: number;
-  owner: {
-    avatar_url: string;
-    login: string;
-    html_url: string;
-  };
-  name: string;
-  updated_at: string;
-  html_url: string;
-};
-
-type Portfolio = Repo[];
+const { data: commits } = useFetch("/api/github/commits");
 </script>

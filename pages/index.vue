@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-const { data: latestCommit } = useFetch("/api/github/commits");
+const { data: latestCommit } = useFetch("/api/github/latestCommit");
 
 const { data: posts } = await useAsyncData("latest-posts", () => {
   return queryContent("blog").sort({ date: 1 }).limit(3).find();
