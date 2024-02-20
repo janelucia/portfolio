@@ -2,21 +2,21 @@
   <div
     v-for="post in props.posts"
     :key="post.slug"
-    class="bg-white rounded-lg shadow-md overflow-hidden hover:opacity-75"
+    class="overflow-hidden bg-white rounded-lg shadow-md hover:opacity-75"
   >
     <NuxtLink :to="post._path">
       <img
         :src="`images/blog/${post.cover}`"
         alt="Blog Post Cover Image"
-        class="w-full h-48 object-cover"
+        class="object-cover w-full h-48"
       />
     </NuxtLink>
     <div class="p-6">
-      <h2 class="text-xl font-bold mb-2">{{ post.title }}</h2>
-      <p class="text-gray-700 mb-4">{{ post.description }}</p>
+      <h2 class="mb-2 text-xl font-bold">{{ post.title }}</h2>
+      <p class="mb-4 text-gray-700">{{ post.description }}</p>
       <NuxtLink
         :to="post._path"
-        class="inline bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded float-right mb-2"
+        class="inline float-right px-4 py-2 mb-2 text-white bg-blue-500 rounded hover:bg-blue-700"
         >Read More</NuxtLink
       >
     </div>
@@ -24,7 +24,5 @@
 </template>
 
 <script setup>
-const props = defineProps(['posts']);
+const props = defineProps(["posts"]);
 </script>
-
-<style scoped></style>
