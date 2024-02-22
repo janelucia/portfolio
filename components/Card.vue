@@ -1,26 +1,31 @@
 <template>
-  <div class="flex flex-col shadow-md bg-neutral rounded-md p-4 gap-8">
-    <div class="flex gap-4">
-      <div class="avatar">
-        <div class="w-12 rounded-full">
-          <NuxtImg :src="avatarUrl" />
+  <div class="flex flex-col gap-8 p-4 rounded-md shadow-md bg-neutral">
+    <div class="flex justify-between gap-4">
+      <div class="flex gap-4">
+        <div class="avatar">
+          <div class="w-12 rounded-full">
+            <NuxtImg :src="avatarUrl" />
+          </div>
+        </div>
+        <div>
+          <a
+            :href="repositoryUrl"
+            target="_blank"
+            class="cursor-pointer hover:text-primary"
+          >
+            <p class="font-bold">{{ repositoryName }}</p>
+          </a>
+          <a
+            :href="ownerUrl"
+            target="_blank"
+            class="cursor-pointer hover:text-primary"
+          >
+            <p>{{ ownerName }}</p>
+          </a>
         </div>
       </div>
-      <div>
-        <a
-          :href="repositoryUrl"
-          target="_blank"
-          class="hover:text-primary cursor-pointer"
-        >
-          <p class="font-bold">{{ repositoryName }}</p>
-        </a>
-        <a
-          :href="ownerUrl"
-          target="_blank"
-          class="hover:text-primary cursor-pointer"
-        >
-          <p>{{ ownerName }}</p>
-        </a>
+      <div class="w-8">
+        <Icon name="teenyicons:git-outline" class="w-full h-full" />
       </div>
     </div>
     <div>
@@ -31,7 +36,7 @@
         v-if="committerUrl"
         :href="committerUrl"
         target="_blank"
-        class="hover:text-primary cursor-pointer"
+        class="cursor-pointer hover:text-primary"
       >
         <p>{{ committerName }}</p>
       </a>
