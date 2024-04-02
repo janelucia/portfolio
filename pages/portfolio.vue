@@ -1,7 +1,15 @@
 <template>
+  <Hero
+    hero-title="Portfolio"
+    image-href="/images/jane-animation3.gif"
+    image-alt="Collection of pictures of Jane in front of the prague castle"
+  >
+    Ready to explore? Click the "Look at me" link beside each project to dive
+    in. Plus, check out my latest Git commits for a peek at my recent work.
+    Let's get started!
+  </Hero>
   <section class="flex flex-col w-full gap-8 px-4 md:flex-row">
     <div class="flex flex-col gap-8 lg:w-3/4">
-      <h2 class="text-6xl text-primary">Portfolio</h2>
       <div v-for="(repo, index) in (portfolio as Repo[])">
         <div
           v-for="item in listPortfolio.filter(
